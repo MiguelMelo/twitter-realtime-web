@@ -10,7 +10,6 @@ export default class Login extends Component {
 
   async componentDidMount() {
     const username = await localStorage.getItem('@GoTwitter:username');
-    console.log(username);
 
     if (username === null) return;
 

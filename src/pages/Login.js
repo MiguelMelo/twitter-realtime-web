@@ -8,6 +8,15 @@ export default class Login extends Component {
     username: '',
   };
 
+  async componentDidMount() {
+    const username = await localStorage.getItem('@GoTwitter:username');
+    console.log(username);
+
+    if (username === null) return;
+
+    this.props.history.push('/timeline');
+  };
+
   handleInputChange = (e) => {
     this.setState({ username: e.target.value });
   };
